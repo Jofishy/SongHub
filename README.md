@@ -1,2 +1,4 @@
 # SongHub
-Host and organize your music library in the cloud.
+Saves and organizes music remotely.
+
+Store music in one place, play it from anywhere.

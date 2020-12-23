@@ -1,3 +1,6 @@
+# vscode stuff
+.vscode/
+
 # Music files
 manager/music/*
 

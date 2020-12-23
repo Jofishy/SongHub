@@ -1,4 +1,4 @@
-const host = "http://man.com:5000"
+const host = "http://localhost:5000"
 
 const download = document.querySelector("#download");
 const notify = document.querySelector("#notify");

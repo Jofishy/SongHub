@@ -1,5 +1,5 @@
 import pika, json
-from downloader.util import getConfig
+from .util import getConfig
 
 def download(url):
     config = getConfig()
@@ -16,8 +16,6 @@ def download(url):
         routing_key=config["queue"],
         body=json.dumps({"url":url, "action":"download"}),
         properties=pika.BasicProperties(delivery_mode=2)) # make message persistent
-
-    print("Message sent!")
 
     # close connection
     connection.close()

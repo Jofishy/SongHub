@@ -1,5 +1,5 @@
 from flask import Flask, request
-from downloader import download
+from downloader.dispatcher import download
 
 app = Flask(__name__)
 
@@ -11,12 +11,12 @@ def after_request(response):
 
 @app.route("/")
 def hello_world():
-    return "Hello world!"
+    return "Welcome!"
 
+# Old download request from extension
 @app.route("/download")
 def download_yt():
     url = request.args.get("url")
-    if download(url):
-        return "ok"
-    else:
-        abort(500)
+    download(url)
+    
+    return "ok"

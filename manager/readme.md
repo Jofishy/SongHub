@@ -1,13 +1,22 @@
 # Start rabbit mq server
-```sudo docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management```
+
+```
+sudo docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
 
 # Start worker
 from manager directory:
-    ```python3 downloader/consumer.py```
+
+```
+python3 downloader/consumer.py
+```
 
 # Start api
-from managerD directory:
-    ```./start-dev.sh```
+from manager directory:
+
+```
+./start-dev.sh
+```
 
 # Add chrome extension
 Make sure the previous steps have been completed before trying to download using the extension

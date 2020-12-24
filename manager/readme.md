@@ -3,11 +3,11 @@
 
 # Start worker
 from manager directory:
-```python3 downloader/consumer.py```
+    ```python3 downloader/consumer.py```
 
 # Start api
 from managerD directory:
-```./start-dev.sh```
+    ```./start-dev.sh```
 
 # Add chrome extension
 Make sure the previous steps have been completed before trying to download using the extension

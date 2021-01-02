@@ -17,6 +17,10 @@ from manager directory:
 ```
 ./start-dev.sh
 ```
+or
+```
+./start-dev.ps1
+```
 
 # Add chrome extension
 Make sure the previous steps have been completed before trying to download using the extension

@@ -1,7 +1,10 @@
 from flask import Flask, request
-from downloader.dispatcher import download
+import threading
+from downloader.download import download
 
 app = Flask(__name__)
+
+base_threads = len(threading.enumerate())
 
 @app.after_request
 def after_request(response):
@@ -13,10 +16,9 @@ def after_request(response):
 def hello_world():
     return "Welcome!"
 
-# Old download request from extension
 @app.route("/download")
 def download_yt():
     url = request.args.get("url")
     download(url)
     
-    return "ok"
+    return {"status":"downloading"}

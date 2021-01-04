@@ -4,8 +4,6 @@ from downloader.download import download
 
 app = Flask(__name__)
 
-base_threads = len(threading.enumerate())
-
 @app.after_request
 def after_request(response):
     response.headers['Access-Control-Allow-Origin'] = '*'
@@ -16,9 +14,18 @@ def after_request(response):
 def hello_world():
     return "Welcome!"
 
+@app.route("/downloader/<id>")
+def get_downloader(id):
+    return id
+
 @app.route("/download")
 def download_yt():
     url = request.args.get("url")
-    download(url)
+    dl_thread = download(url)
     
-    return {"status":"downloading"}
+    body = {
+        "status": "downloading",
+        "downloader": dl_thread
+    }
+
+    return body, 202

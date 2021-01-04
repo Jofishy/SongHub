@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(()=>{
-    chrome.storage.sync.set({color:'red'}, ()=>{
-        console.log("the color is green");
+    chrome.storage.sync.set({dl_status:{}}, ()=>{
+        // don't need to do anythign
     });
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, ()=>{

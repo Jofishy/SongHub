@@ -8,9 +8,13 @@
       </style>
     </head>
     <body>
-        <div>
-            <button id="download">Download</button>
+        <div id="download-ui">
+            <button id="download-button">Download</button>
             <p id="notify"></p>
+        </div>
+        <div id="status-ui">
+          <p>Download initiated.</p>
+          <p id="status-text"></p>
         </div>
         <script src="axios.min.js"></script>
         <script src="popup.js"></script>
